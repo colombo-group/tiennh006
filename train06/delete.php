@@ -60,7 +60,7 @@ include "../train06/config.php";
 		Nhập YES để xóa<input type="text" name="confirm"></input><br><br>
 		<input type = "submit" name="submit" value="Xóa"></input>
 		<?php echo $confirmErr?>
-		<a href="../train06/index.php">Quay về trang chủ</a>
+		<a href="/index.php">Quay về trang chủ</a>
 </div>
 </body>
 </html>

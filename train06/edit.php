@@ -199,18 +199,18 @@ include "../train06/config.php";
 				$str = $_FILES['avatar']['type'];
 		        $str= substr($str, 6);
 			    $avatar = $userName.".".$str;
-			    $pathAvatar = "../train06/images/avatar/".$avatar;
+			    $pathAvatar = "/public/images/".$avatar;
 			} 
 
 			$sql = "update profile set fullname ='".$fullName."', username ='".$userName."', email ='".$email."', phone = '".$phone."', avatar = '".$pathAvatar."', description = '".$des."', birthday ='".$birthDay."', sex ='".$sex."', level ='".$level."' where username ='".$_GET['username']."'";
 
 			if(mysql_query($sql)) {
 		    	if($_FILES['avatar']['name'] != NULL) {
-		    		move_uploaded_file($_FILES['avatar']['tmp_name'], "images/avatar/".$avatar);
+		    		move_uploaded_file($_FILES['avatar']['tmp_name'], "public/images/".$avatar);
 		    		//unlink($unLinkFile);
 		    	}
 		    	echo "Sửa thành công"."<br>";
-		    	echo "<a href='../train06/index.php'>Quay về trang chủ</a>";
+		    	echo "<a href='/index.php'>Quay về trang chủ</a>";
 		    	die();
 		    } else {
 		    	echo "Đã có lỗi xảy ra";
